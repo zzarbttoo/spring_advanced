@@ -20,7 +20,7 @@ public class OrderServiceV3 {
 
         try {
             status = trace.begin("OrderService.orderItem()");
-            orderRepositoryV3.save(status.getTraceId(), itemId);
+            orderRepositoryV3.save(itemId);
             trace.end(status);
         }catch (Exception e){
             trace.exception(status, e);
