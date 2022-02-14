@@ -41,6 +41,7 @@ public class ProxyFactoryConfigV2 {
 
     }
 
+
     @Bean
     public OrderRepositoryV2 orderRepositoryV2(LogTrace logTrace){
         OrderRepositoryV2 orderRepository = new OrderRepositoryV2();
