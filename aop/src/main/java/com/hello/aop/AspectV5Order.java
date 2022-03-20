@@ -1,4 +1,4 @@
-package com.hello.aop.order.aop;
+package com.hello.aop;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -14,7 +14,7 @@ public class AspectV5Order {
     @Order(2)
     public static class LogAspect{
 
-        @Around("com.hello.aop.order.aop.Pointcuts.allOrder()")
+        @Around("com.hello.aop.Pointcuts.allOrder()")
         public Object doLog(ProceedingJoinPoint joinPoint) throws Throwable{
             log.info("[log] {}", joinPoint.getSignature());
 
@@ -28,7 +28,7 @@ public class AspectV5Order {
     public static class TxAspect{
 
         //hello.aop.order 패키지와 하위 패키지이면서 클래스 이름 패턴이 *Service
-        @Around("com.hello.aop.order.aop.Pointcuts.orderAndService()")
+        @Around("com.hello.aop.Pointcuts.orderAndService()")
         public Object doTransaction(ProceedingJoinPoint joinPoint) throws Throwable{
 
             try {
